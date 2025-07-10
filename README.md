@@ -34,12 +34,11 @@ composer require devedgaralvarez/laravel-dto-generator
 ## 📦 Uso
 Después de la instalación, puedes generar un DTO con el siguiente comando Artisan:
 ```bash
-php artisan make:dto NombreDelDto
+php artisan make:dto NombreDelDto ```
 
 Esto creará una clase en:
 ```bash
-app/Dto/NombreDelDto.php
-
+app/Dto/NombreDelDto.php ```
 ---
 
 ## ✅ Roadmap
