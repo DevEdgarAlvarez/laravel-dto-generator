@@ -2,15 +2,12 @@
 
 namespace DummyNamespace;
 
-use Illuminate\Http\Resources\Json\JsonResource;
+use App\Dtos\BaseDto;
 DummyModelImport
 
-class DummyClass extends JsonResource
+class DummyClass extends BaseDto
 {
-    /**
-     * Transforma el recurso en un array.
-     */
-    public function toArray($request): array
+    public function toArray(): array
     {
         return [
             DummyToArrayContent

@@ -18,7 +18,7 @@ class MakeDtoCommand extends GeneratorCommand
 
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace . '\Dtos';
+        return $rootNamespace . 'App\\Dto';
     }
 
     protected function getOptions()
