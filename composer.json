@@ -17,9 +17,6 @@
     "require": {
         "php": ">=8.0"
     },
-    "replace": {
-        "illuminate/support": "*"
-    },
     "extra": {
         "laravel": {
             "providers": [
