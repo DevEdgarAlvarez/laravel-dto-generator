@@ -17,7 +17,7 @@ class MakeDtoCommand extends GeneratorCommand
 
         return file_exists($customPath)
             ? $customPath
-            : __DIR__ . '/../../../stubs/dto.stub';
+            : realpath(__DIR__ . '/../../../stubs/dto.stub');
     }
 
     protected function getDefaultNamespace($rootNamespace)
