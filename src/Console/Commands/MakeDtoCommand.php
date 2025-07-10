@@ -13,12 +13,16 @@ class MakeDtoCommand extends GeneratorCommand
 
     protected function getStub()
     {
-        return base_path('stubs/dto.stub');
+        $customPath = base_path('stubs/dto.stub');
+
+        return file_exists($customPath)
+            ? $customPath
+            : __DIR__ . '/../../../stubs/dto.stub';
     }
 
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace . 'App\\Dto';
+        return $rootNamespace . '\\Dto';
     }
 
     protected function getOptions()
