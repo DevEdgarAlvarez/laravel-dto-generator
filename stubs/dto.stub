@@ -1,0 +1,19 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+DummyModelImport
+
+class DummyClass extends JsonResource
+{
+    /**
+     * Transforma el recurso en un array.
+     */
+    public function toArray($request): array
+    {
+        return [
+            DummyToArrayContent
+        ];
+    }
+}
