@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Dtos;
+namespace DevEdgarAlvarez\LaravelDtoGenerator\Dtos;
 
 use Illuminate\Contracts\Support\Arrayable;
 
