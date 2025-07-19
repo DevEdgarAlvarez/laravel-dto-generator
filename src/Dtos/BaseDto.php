@@ -3,6 +3,7 @@
 namespace DevEdgarAlvarez\LaravelDtoGenerator\Dtos;
 
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Carbon;
 
 abstract class BaseDto implements Arrayable
 {
@@ -18,11 +19,9 @@ abstract class BaseDto implements Arrayable
         return $this->model->{$key};
     }
 
-    public static function collection(iterable $items): array
+    public static function collection(iterable $items): \Illuminate\Support\Collection
     {
-        return collect($items)
-            ->map(fn($item) => (new static($item))->toArray())
-            ->toArray();
+        return collect($items)->map(fn($item) => new static($item));
     }
 
     protected function whenLoaded(string $relation, string $dtoClass)
@@ -36,5 +35,20 @@ abstract class BaseDto implements Arrayable
         return $related instanceof \Illuminate\Support\Collection
             ? $dtoClass::collection($related)
             : new $dtoClass($related);
+    }
+
+    protected function asCurrency(float $value, string $symbol = '$'): string
+    {
+        return $symbol . number_format($value, 2);
+    }
+
+    protected function asDate(?string $date, string $format = 'd/m/Y'): ?string
+    {
+        return $date ? Carbon::parse($date)->format($format) : null;
+    }
+
+    protected function asBool(bool $value): string
+    {
+        return $value ? 'Sí' : 'No';
     }
 }

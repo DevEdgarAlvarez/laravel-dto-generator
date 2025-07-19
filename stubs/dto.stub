@@ -1,9 +1,9 @@
 <?php
 
 namespace DummyNamespace;
-
-use App\Dtos\BaseDto;
 DummyModelImport
+
+use DevEdgarAlvarez\LaravelDtoGenerator\Dtos\BaseDto;
 
 class DummyClass extends BaseDto
 {
